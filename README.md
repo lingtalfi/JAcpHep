@@ -78,6 +78,10 @@ var hepParams = acpHelper.getHepParameters(jMyObject);
 History Log
 =============
 
+- 1.0.1 -- 2019-09-23
+
+    - implemented the universe assets idea
+    
 - 1.0.0 -- 2019-09-23
 
     - initial commit
