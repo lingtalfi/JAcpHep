@@ -54,9 +54,13 @@ if ('undefined' === typeof AcpHepHelper) {
                     success: function (response) {
                         var type = response.type;
                         if ('error' === type) {
-                            errorHandler(response.error, response);
+                            if ('undefined' !== typeof errorHandler) {
+                                errorHandler(response.error, response);
+                            }
                         } else if ('success' === type) {
-                            successHandler(response);
+                            if ('undefined' !== typeof successHandler) {
+                                successHandler(response);
+                            }
                         } else {
                             this.error("Unknown response type from the server.");
                         }

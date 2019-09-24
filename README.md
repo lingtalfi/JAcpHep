@@ -80,6 +80,10 @@ var hepParams = acpHelper.getHepParameters(jMyObject);
 History Log
 =============
 
+- 1.0.3 -- 2019-09-24
+
+    - fix success/error handlers not handled when undefined
+    
 - 1.0.2 -- 2019-09-23
 
     - update README.md
