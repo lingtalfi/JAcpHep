@@ -14,11 +14,7 @@ if ('undefined' === typeof AcpHepHelper) {
         }
 
 
-        window.AcpHepHelper = function (options) {
-            this.options = $.extend({}, window.AcpHepHelper._defaults, options);
-        };
-        window.AcpHepHelper.prototype = {
-
+        window.AcpHepHelper = {
             /**
              * Returns the hep associative array.
              * https://github.com/lingtalfi/NotationFan/blob/master/html-element-parameters.md
@@ -56,13 +52,15 @@ if ('undefined' === typeof AcpHepHelper) {
                         if ('error' === type) {
                             if ('undefined' !== typeof errorHandler) {
                                 errorHandler(response.error, response);
+                            } else {
+                                AcpHepHelper.error(response.error);
                             }
                         } else if ('success' === type) {
                             if ('undefined' !== typeof successHandler) {
                                 successHandler(response);
                             }
                         } else {
-                            this.error("Unknown response type from the server.");
+                            AcpHepHelper.error("Unknown response type from the server.");
                         }
                     },
                     dataType: "json",
@@ -75,12 +73,5 @@ if ('undefined' === typeof AcpHepHelper) {
             },
         };
 
-
-        //----------------------------------------
-        //
-        //----------------------------------------
-        window.AcpHepHelper._defaults = {
-            none: null,
-        };
     })();
 }
