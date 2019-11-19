@@ -27,10 +27,14 @@ if ('undefined' === typeof AcpHepHelper) {
                     if (startsWith(name, "data-param-")) {
                         name = name.substr(11);
                         attr[name] = v;
-                    }
-                    else if (startsWith(name, "data-paramjson-")) {
+                    } else if (startsWith(name, "data-paramjson-")) {
                         name = name.substr(15);
-                        attr[name] = JSON.parse(v);
+                        try {
+                            attr[name] = JSON.parse(v);
+                        } catch (e) {
+                            console.log(e);
+                            console.log("acphep-helper: invalid json syntax: ", v);
+                        }
                     }
                 });
                 return attr;

@@ -78,6 +78,10 @@ var hepParams = AcpHepHelper.getHepParameters(jMyObject);
 History Log
 =============
 
+- 1.2.1 -- 2019-11-19
+
+    - update api add exception handling for bad json notation
+    
 - 1.2.0 -- 2019-11-19
 
     - update api to accommodate new hep json notation
