@@ -28,6 +28,10 @@ if ('undefined' === typeof AcpHepHelper) {
                         name = name.substr(11);
                         attr[name] = v;
                     }
+                    else if (startsWith(name, "data-paramjson-")) {
+                        name = name.substr(15);
+                        attr[name] = JSON.parse(v);
+                    }
                 });
                 return attr;
             },
