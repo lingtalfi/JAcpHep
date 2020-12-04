@@ -78,6 +78,10 @@ var hepParams = AcpHepHelper.getHepParameters(jMyObject);
 History Log
 =============
 
+- 1.2.2 -- 2020-12-04
+
+    - Add lpi-deps.byml file
+
 - 1.2.1 -- 2019-11-19
 
     - update api add exception handling for bad json notation
