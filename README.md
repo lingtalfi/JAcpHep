@@ -78,6 +78,10 @@ var hepParams = AcpHepHelper.getHepParameters(jMyObject);
 History Log
 =============
 
+- 1.2.3 -- 2020-12-08
+
+    - Fix lpi-deps not using natsort.
+
 - 1.2.2 -- 2020-12-04
 
     - Add lpi-deps.byml file
