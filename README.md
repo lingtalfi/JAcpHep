@@ -1,6 +1,6 @@
 JAcpHep
 ===========
-2019-09-23 -> 2021-03-05
+2019-09-23 -> 2021-04-02
 
 
 
@@ -83,6 +83,10 @@ var hepParams = AcpHepHelper.getHepParameters(jMyObject);
 History Log
 =============
 
+- 1.2.5 -- 2021-04-02
+
+    - update AcpHepHelper.post, now accepts options map
+  
 - 1.2.4 -- 2021-03-05
 
     - update README.md, add install alternative

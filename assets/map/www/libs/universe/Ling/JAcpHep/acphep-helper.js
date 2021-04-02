@@ -48,8 +48,15 @@ if ('undefined' === typeof AcpHepHelper) {
              * Both handlers (successHandler and errorHandler) are optional.
              * If you don't use one, either use null or do not pass it (i.e. undefined).
              *
+             * Available options are:
+             * - after: a callback to call after the request is posted, no matter which response type was returned.
+             *
+             *
              */
-            post: function (url, data, successHandler, errorHandler) {
+            post: function (url, data, successHandler, errorHandler, options) {
+
+                var after = options.after || function(){};
+
 
                 $.ajax({
                     type: "POST",
@@ -72,6 +79,7 @@ if ('undefined' === typeof AcpHepHelper) {
                         }
                     },
                     dataType: "json",
+                    complete: after,
                 });
 
 
