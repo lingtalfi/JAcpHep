@@ -83,6 +83,10 @@ var hepParams = AcpHepHelper.getHepParameters(jMyObject);
 History Log
 =============
 
+- 1.2.7 -- 2021-05-01
+
+    - add AcpHepHelper.post httpErrorHandler option
+  
 - 1.2.6 -- 2021-05-01
 
     - fix AcpHepHelper.post throws error if options not defined

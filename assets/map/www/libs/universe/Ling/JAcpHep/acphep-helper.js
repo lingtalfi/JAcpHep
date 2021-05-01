@@ -50,18 +50,23 @@ if ('undefined' === typeof AcpHepHelper) {
              *
              * Available options are:
              * - after: a callback to call after the request is posted, no matter which response type was returned.
+             * - httpErrorHandler: a callback to call if the http request fails. The argument passed to this handler are:
+             *      - errorMsg: string, the error message, which is the combination of the status and the error text (i.e. 404 Not found)
+             *      - the jqXHR object given by jquery (see the ajax documentation: https://api.jquery.com/jquery.ajax/ for more details)
              *
              *
              */
             post: function (url, data, successHandler, errorHandler, options) {
 
 
-                var after;
+                var after, httpErrorHandler;
 
                 if (options) {
                     after = options.after || function () {};
+                    httpErrorHandler = options.after || function () {};
                 } else {
                     after = function () {};
+                    httpErrorHandler = function () {};
                 }
 
 
@@ -87,6 +92,9 @@ if ('undefined' === typeof AcpHepHelper) {
                     },
                     dataType: "json",
                     complete: after,
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        httpErrorHandler(jqXHR.status + " " + errorThrown, jqXHR);
+                    }
                 });
 
 
