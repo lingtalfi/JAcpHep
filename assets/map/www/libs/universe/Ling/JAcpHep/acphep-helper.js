@@ -55,7 +55,14 @@ if ('undefined' === typeof AcpHepHelper) {
              */
             post: function (url, data, successHandler, errorHandler, options) {
 
-                var after = options.after || function(){};
+
+                var after;
+
+                if (options) {
+                    after = options.after || function () {};
+                } else {
+                    after = function () {};
+                }
 
 
                 $.ajax({
